@@ -42,6 +42,7 @@
 		A1B0556B1B1B3F530056DC45 /* Minimum Size Subarray Sum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1B0556A1B1B3F530056DC45 /* Minimum Size Subarray Sum.cpp */; };
 		A1EC1DC51B4AB0F200878672 /* Power of Two.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1EC1DC41B4AB0F200878672 /* Power of Two.cpp */; };
 		A1EC1DC71B4AB7DE00878672 /* Kth Smallest Element in a BST.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1EC1DC61B4AB7DE00878672 /* Kth Smallest Element in a BST.cpp */; };
+		A1F545041CABFE690041EA89 /* 214_Shortest Palindrome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1F545031CABFE690041EA89 /* 214_Shortest Palindrome.cpp */; };
 		A1FE8BE31AD12D080060D766 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1FE8BE21AD12D080060D766 /* main.cpp */; };
 		D7197F5B1C871F0E00DB2A2F /* Number of Digit One_223.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7197F5A1C871F0D00DB2A2F /* Number of Digit One_223.cpp */; };
 		D7197F5D1C87245500DB2A2F /* Product of Array Except Self_238.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7197F5C1C87245500DB2A2F /* Product of Array Except Self_238.cpp */; };
@@ -99,6 +100,7 @@
 		A1B0556A1B1B3F530056DC45 /* Minimum Size Subarray Sum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Minimum Size Subarray Sum.cpp"; sourceTree = "<group>"; };
 		A1EC1DC41B4AB0F200878672 /* Power of Two.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Power of Two.cpp"; sourceTree = "<group>"; };
 		A1EC1DC61B4AB7DE00878672 /* Kth Smallest Element in a BST.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Kth Smallest Element in a BST.cpp"; sourceTree = "<group>"; };
+		A1F545031CABFE690041EA89 /* 214_Shortest Palindrome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "214_Shortest Palindrome.cpp"; sourceTree = "<group>"; };
 		A1FE8BDF1AD12D080060D766 /* contest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = contest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FE8BE21AD12D080060D766 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		D7197F5A1C871F0D00DB2A2F /* Number of Digit One_223.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Number of Digit One_223.cpp"; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				D7197F5C1C87245500DB2A2F /* Product of Array Except Self_238.cpp */,
 				D79DE7131C8F038500A993E0 /* 236.cpp */,
 				D79DE7311C984ACB00A993E0 /* Different Ways to Add Parentheses.cpp */,
+				A1F545031CABFE690041EA89 /* 214_Shortest Palindrome.cpp */,
 			);
 			path = contest;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				A167FCA81B05F04B00CD7B9A /* Isomorphic Strings.cpp in Sources */,
 				A18C19F91B1F46A500730DA8 /* Permutations.cpp in Sources */,
 				A167FCAC1B0A132E00CD7B9A /* Binary Tree Level Order Traversal.cpp in Sources */,
+				A1F545041CABFE690041EA89 /* 214_Shortest Palindrome.cpp in Sources */,
 				A1B0556B1B1B3F530056DC45 /* Minimum Size Subarray Sum.cpp in Sources */,
 				A127AB7F1AD972E4005828A0 /* ExcelSheetColumnNumber.cpp in Sources */,
 				A181CAC61B0D856C0009E890 /* Remove Nth Node From End of List.cpp in Sources */,
