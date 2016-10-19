@@ -32,12 +32,12 @@ public:
     }
 
     // Get the top element.
-    int top() {
-
-    }
-
-    // Return whether the stack is empty.
-    bool empty() {
-
-    }
+//    int top() {
+//
+//    }
+//
+//    // Return whether the stack is empty.
+//    bool empty() {
+//
+//    }
 };

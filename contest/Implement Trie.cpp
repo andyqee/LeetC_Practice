@@ -38,15 +38,15 @@ public:
     }
     
     // Returns if the word is in the trie.
-    bool search(string key) {
-        
-    }
-    
-    // Returns if there is any word in the trie
-    // that starts with the given prefix.
-    bool startsWith(string prefix) {
-        
-    }
+//    bool search(string key) {
+//        
+//    }
+//    
+//    // Returns if there is any word in the trie
+//    // that starts with the given prefix.
+//    bool startsWith(string prefix) {
+//        
+//    }
     
 private:
     TrieNode* root;

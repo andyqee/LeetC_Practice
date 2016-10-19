@@ -19,7 +19,7 @@
 
 //#include "Reverse Linked List.cpp"
 
-#include "Substring with Concatenation of All Words.cpp"
+//#include "Substring with Concatenation of All Words.cpp"
 
 /** Problem 1: Funny String
 using namespace std;
@@ -247,16 +247,22 @@ int main() {
 //    return 0;
 //}
 
+#include "377_Combination Sum IV.cpp"
+
 int main() {
     Solution s;
+    vector<int> num ({1,2,3});
+    int R  = s.combinationSum4(num, 4);
+    
 //    string str = "abababab";
-    string str = "a";
-    vector<string> v;
-    v.push_back("a");
+//    string str = "a";
+//    vector<string> v;
+//    v.push_back("a");
 //    v.push_back("b");
 //    v.push_back("a");
 
-    s.findSubstring02(str, v);
+//    s.findSubstring02(str, v);
+    
     
     return 0;
 }

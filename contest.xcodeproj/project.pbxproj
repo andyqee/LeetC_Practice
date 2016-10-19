@@ -44,10 +44,14 @@
 		A1EC1DC71B4AB7DE00878672 /* Kth Smallest Element in a BST.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1EC1DC61B4AB7DE00878672 /* Kth Smallest Element in a BST.cpp */; };
 		A1F545041CABFE690041EA89 /* 214_Shortest Palindrome.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1F545031CABFE690041EA89 /* 214_Shortest Palindrome.cpp */; };
 		A1FE8BE31AD12D080060D766 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1FE8BE21AD12D080060D766 /* main.cpp */; };
+		D70C29341D94D10D00556ED6 /* 392_Is_Subsequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D70C29331D94D10D00556ED6 /* 392_Is_Subsequence.cpp */; };
 		D7197F5B1C871F0E00DB2A2F /* Number of Digit One_223.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7197F5A1C871F0D00DB2A2F /* Number of Digit One_223.cpp */; };
 		D7197F5D1C87245500DB2A2F /* Product of Array Except Self_238.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7197F5C1C87245500DB2A2F /* Product of Array Except Self_238.cpp */; };
+		D79A9B6C1DA8A475009F05C1 /* Largest_Divisible_Subset.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79A9B6B1DA8A475009F05C1 /* Largest_Divisible_Subset.swift */; };
+		D79ADE721D97C17F00AA5B0C /* _376_Wiggle Subsequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D79ADE711D97C17F00AA5B0C /* _376_Wiggle Subsequence.cpp */; };
 		D79DE7141C8F038500A993E0 /* 236.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D79DE7131C8F038500A993E0 /* 236.cpp */; };
 		D79DE7321C984ACB00A993E0 /* Different Ways to Add Parentheses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D79DE7311C984ACB00A993E0 /* Different Ways to Add Parentheses.cpp */; };
+		D7B10EF91D961FDA003E16AC /* 377_Combination Sum IV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B10EF81D961FDA003E16AC /* 377_Combination Sum IV.cpp */; };
 		D7DEB4BA1C7DDC8000E8005D /* Increasing Triplet Subsequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7DEB4B91C7DDC8000E8005D /* Increasing Triplet Subsequence.cpp */; };
 /* End PBXBuildFile section */
 
@@ -103,10 +107,16 @@
 		A1F545031CABFE690041EA89 /* 214_Shortest Palindrome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "214_Shortest Palindrome.cpp"; sourceTree = "<group>"; };
 		A1FE8BDF1AD12D080060D766 /* contest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = contest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FE8BE21AD12D080060D766 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		D70C29331D94D10D00556ED6 /* 392_Is_Subsequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 392_Is_Subsequence.cpp; sourceTree = "<group>"; };
 		D7197F5A1C871F0D00DB2A2F /* Number of Digit One_223.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Number of Digit One_223.cpp"; sourceTree = "<group>"; };
 		D7197F5C1C87245500DB2A2F /* Product of Array Except Self_238.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Product of Array Except Self_238.cpp"; sourceTree = "<group>"; };
+		D79A9B6A1DA8A475009F05C1 /* contest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "contest-Bridging-Header.h"; sourceTree = "<group>"; };
+		D79A9B6B1DA8A475009F05C1 /* Largest_Divisible_Subset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Largest_Divisible_Subset.swift; sourceTree = "<group>"; };
+		D79A9B6D1DA8C658009F05C1 /* leetCode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = leetCode.playground; sourceTree = "<group>"; };
+		D79ADE711D97C17F00AA5B0C /* _376_Wiggle Subsequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "_376_Wiggle Subsequence.cpp"; sourceTree = "<group>"; };
 		D79DE7131C8F038500A993E0 /* 236.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 236.cpp; sourceTree = "<group>"; };
 		D79DE7311C984ACB00A993E0 /* Different Ways to Add Parentheses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Different Ways to Add Parentheses.cpp"; sourceTree = "<group>"; };
+		D7B10EF81D961FDA003E16AC /* 377_Combination Sum IV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "377_Combination Sum IV.cpp"; sourceTree = "<group>"; };
 		D7DEB4B91C7DDC8000E8005D /* Increasing Triplet Subsequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Increasing Triplet Subsequence.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +193,12 @@
 				D79DE7131C8F038500A993E0 /* 236.cpp */,
 				D79DE7311C984ACB00A993E0 /* Different Ways to Add Parentheses.cpp */,
 				A1F545031CABFE690041EA89 /* 214_Shortest Palindrome.cpp */,
+				D70C29331D94D10D00556ED6 /* 392_Is_Subsequence.cpp */,
+				D7B10EF81D961FDA003E16AC /* 377_Combination Sum IV.cpp */,
+				D79ADE711D97C17F00AA5B0C /* _376_Wiggle Subsequence.cpp */,
+				D79A9B6B1DA8A475009F05C1 /* Largest_Divisible_Subset.swift */,
+				D79A9B6A1DA8A475009F05C1 /* contest-Bridging-Header.h */,
+				D79A9B6D1DA8C658009F05C1 /* leetCode.playground */,
 			);
 			path = contest;
 			sourceTree = "<group>";
@@ -218,6 +234,7 @@
 				TargetAttributes = {
 					A1FE8BDE1AD12D080060D766 = {
 						CreatedOnToolsVersion = 6.2;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -247,12 +264,14 @@
 				A15D144A1B4FEE9900F3D2E9 /* ImplementStackusingQueues.cpp in Sources */,
 				A14739DD1B15C99D002AAB8E /* Course Schedule.cpp in Sources */,
 				A1018C081AFCE5D0000A67EC /* Merge Two Sorted Lists.cpp in Sources */,
+				D79ADE721D97C17F00AA5B0C /* _376_Wiggle Subsequence.cpp in Sources */,
 				D79DE7321C984ACB00A993E0 /* Different Ways to Add Parentheses.cpp in Sources */,
 				A127AB831ADA4431005828A0 /* Majority Element.cpp in Sources */,
 				A167FCA81B05F04B00CD7B9A /* Isomorphic Strings.cpp in Sources */,
 				A18C19F91B1F46A500730DA8 /* Permutations.cpp in Sources */,
 				A167FCAC1B0A132E00CD7B9A /* Binary Tree Level Order Traversal.cpp in Sources */,
 				A1F545041CABFE690041EA89 /* 214_Shortest Palindrome.cpp in Sources */,
+				D7B10EF91D961FDA003E16AC /* 377_Combination Sum IV.cpp in Sources */,
 				A1B0556B1B1B3F530056DC45 /* Minimum Size Subarray Sum.cpp in Sources */,
 				A127AB7F1AD972E4005828A0 /* ExcelSheetColumnNumber.cpp in Sources */,
 				A181CAC61B0D856C0009E890 /* Remove Nth Node From End of List.cpp in Sources */,
@@ -267,6 +286,7 @@
 				D79DE7141C8F038500A993E0 /* 236.cpp in Sources */,
 				A167FCA61B05E48400CD7B9A /* Reverse Linked List.cpp in Sources */,
 				D7197F5D1C87245500DB2A2F /* Product of Array Except Self_238.cpp in Sources */,
+				D79A9B6C1DA8A475009F05C1 /* Largest_Divisible_Subset.swift in Sources */,
 				A14A3EEB1B1354490089BD4E /* Unique Binary Search Trees II.cpp in Sources */,
 				A106E0F31AFC683100B6FB1E /* Remove Linked List Elements.cpp in Sources */,
 				D7DEB4BA1C7DDC8000E8005D /* Increasing Triplet Subsequence.cpp in Sources */,
@@ -277,6 +297,7 @@
 				A1018C061AFCDFBB000A67EC /* Implement Trie.cpp in Sources */,
 				A1FE8BE31AD12D080060D766 /* main.cpp in Sources */,
 				A18C91E51ADD5EC6003DC3F3 /* BinarySearchTreeIterator.cpp in Sources */,
+				D70C29341D94D10D00556ED6 /* 392_Is_Subsequence.cpp in Sources */,
 				A1018C0A1AFCF116000A67EC /* Generate Parentheses.cpp in Sources */,
 				A167BAD31B1D47C10019CC91 /* String to Integer.cpp in Sources */,
 				A1EC1DC71B4AB7DE00878672 /* Kth Smallest Element in a BST.cpp in Sources */,
@@ -368,14 +389,23 @@
 		A1FE8BE71AD12D080060D766 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "contest/contest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		A1FE8BE81AD12D080060D766 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "contest/contest-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
