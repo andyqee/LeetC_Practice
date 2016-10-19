@@ -2,3 +2,118 @@
 
 import Foundation
 
+//344. Reverse String   QuestionEditorial Solution  My Submissions
+//Contributors: Admin
+//Write a function that takes a string as input and returns the string reversed.
+//
+//Example:
+//Given s = "hello", return "olleh".
+
+func reverseString(_ s: String) -> String {
+    if s.characters.count <= 1 {
+        return s
+    }
+    
+    var sA = Array(s.characters)
+    var reversed =  [Character]()
+    let len = s.characters.count
+    
+    for i in (0..<len).reversed() {
+        reversed.append(sA[i])
+    }
+    return String(reversed)
+}
+
+//13. Roman to Integer   QuestionEditorial Solution  My Submissions
+
+//Difficulty: Easy
+//Contributors: Admin
+//Given a roman numeral, convert it to an integer.
+//
+//Input is guaranteed to be within the range from 1 to 3999
+
+// 这道题目我完全理解错了, 这里是把罗马数字 转成 int
+
+//func romanToInt(_ s: String) -> Int {
+//    let map = [Character : Int] = ["M": 1000, "D": 500, "C": 100, "L": 50, "X": 10, "V": 5, "I": 1]
+//    
+//}
+
+//8. String to Integer (atoi)
+
+//Implement atoi to convert a string to an integer.
+//
+//Hint: Carefully consider all possible input cases. If you want a challenge, please do not see below and ask yourself what are the possible input cases.
+//
+//Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.
+
+//这里需要注意的就是
+// string 是否为 nil, 这决定了 接口参数到底设计成 string 还是 String？
+// string 的长度 是否超过Int
+// 非法字符串情况，要过滤掉，如果0 开头的字符串，这个是代码容错 能力的体现
+// 还有就是负数情况，就是说开头是 - 而不是数字，这些都需要考虑清楚啊
+// 这里面只有numberic character 嘛？
+// 要把这些思维过程想清楚，并传达给面试官
+
+func myAtoi(_ str: String) -> Int {
+    let map : [Character : Int] = ["0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9" : 9]
+    
+    var isFirstValidCha = false
+    var isNagtive = false
+    var value : Int = 0
+    var index = 1
+    
+    for (_, c) in str.characters.enumerated() {
+        if c == " " || c == "+" {
+            continue
+        }
+        if c == "-" {
+            isNagtive = true
+        } else if map[c] != nil {
+            if c == "0" && (isFirstValidCha == false) {
+                continue
+            } else {
+                if value > Int.max / 10 || value == Int.max / 10 && map[c]! > 7 {
+                    return isNagtive ? Int.min : Int.max
+                }
+                isFirstValidCha = true
+                value = value * index + map[c]!
+                index = 10
+            }
+        }
+    }
+    return isNagtive ? (0 - value) : value
+}
+
+let a = myAtoi("922337203685477580")
+               18446744073709551616
+
+//30. Substring with Concatenation of All Words
+
+//You are given a string, s, and a list of words, words, that are all of the same length. Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly once and without any intervening characters.
+//
+//For example, given:
+//s: "barfoothefoobarman"
+//words: ["foo", "bar"]
+//
+//You should return the indices: [0,9].
+
+//func findSubstring(_ s: String, _ words: [String]) -> [Int] {
+//    
+//}
+
+//345. Reverse Vowels of a String
+//Write a function that takes a string as input and reverse only the vowels of a string.
+//
+//Example 1:
+//Given s = "hello", return "holle".
+//
+//Example 2:
+//Given s = "leetcode", return "leotcede".
+//
+//Note:
+//The vowels does not include the letter "y".
+
+//func reverseVowels(_ s: String) -> String {
+//    
+//}
