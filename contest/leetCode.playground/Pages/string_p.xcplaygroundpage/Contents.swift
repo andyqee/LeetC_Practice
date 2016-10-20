@@ -54,6 +54,7 @@ func reverseString(_ s: String) -> String {
 // 还有就是负数情况，就是说开头是 - 而不是数字，这些都需要考虑清楚啊
 // 这里面只有numberic character 嘛？
 // 要把这些思维过程想清楚，并传达给面试官
+// 没有处理好的 int 越界，返回最大值
 
 func myAtoi(_ str: String) -> Int {
     let map : [Character : Int] = ["0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6, "7": 7, "8": 8, "9" : 9]
@@ -72,7 +73,7 @@ func myAtoi(_ str: String) -> Int {
         } else if map[c] != nil {
             if c == "0" && (isFirstValidCha == false) {
                 continue
-            } else {
+            } else { // 这里为什么是7 因为 二进制 最后 111 = 7，if > 7, it will overflow
                 if value > Int.max / 10 || value == Int.max / 10 && map[c]! > 7 {
                     return isNagtive ? Int.min : Int.max
                 }
@@ -85,9 +86,6 @@ func myAtoi(_ str: String) -> Int {
     return isNagtive ? (0 - value) : value
 }
 
-let a = myAtoi("922337203685477580")
-               18446744073709551616
-
 //30. Substring with Concatenation of All Words
 
 //You are given a string, s, and a list of words, words, that are all of the same length. Find all starting indices of substring(s) in s that is a concatenation of each word in words exactly once and without any intervening characters.
@@ -98,9 +96,9 @@ let a = myAtoi("922337203685477580")
 //
 //You should return the indices: [0,9].
 
-//func findSubstring(_ s: String, _ words: [String]) -> [Int] {
-//    
-//}
+func findSubstring(_ s: String, _ words: [String]) -> [Int] {
+    
+}
 
 //345. Reverse Vowels of a String
 //Write a function that takes a string as input and reverse only the vowels of a string.
@@ -114,6 +112,38 @@ let a = myAtoi("922337203685477580")
 //Note:
 //The vowels does not include the letter "y".
 
-//func reverseVowels(_ s: String) -> String {
-//    
-//}
+func reverseVowels(_ s: String) -> String {
+    if s.isEmpty {
+        return s
+    }
+    
+    let lowerS = s.lowercased()
+    let vowels : Set = ["a", "e", "i", "e"]
+    
+    var i = 0
+    var j = s.characters.count
+    
+    while i < j {
+        
+    }
+    
+}
+
+//38. Count and Say   QuestionEditorial Solution  My Submissions
+//Total Accepted: 103094
+//Total Submissions: 326709
+//Difficulty: Easy
+//Contributors: Admin
+//The count-and-say sequence is the sequence of integers beginning as follows:
+//1, 11, 21, 1211, 111221, ...
+//
+//1 is read off as "one 1" or 11.
+//11 is read off as "two 1s" or 21.
+//21 is read off as "one 2, then one 1" or 1211.
+//Given an integer n, generate the nth sequence.
+//
+//Note: The sequence of integers will be represented as a string.
+
+func countAndSay(_ n: Int) -> String {
+    
+}
