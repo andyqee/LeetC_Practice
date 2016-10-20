@@ -96,9 +96,9 @@ func myAtoi(_ str: String) -> Int {
 //
 //You should return the indices: [0,9].
 
-func findSubstring(_ s: String, _ words: [String]) -> [Int] {
+//func findSubstring(_ s: String, _ words: [String]) -> [Int] {
     
-}
+//}
 
 //345. Reverse Vowels of a String
 //Write a function that takes a string as input and reverse only the vowels of a string.
@@ -113,21 +113,32 @@ func findSubstring(_ s: String, _ words: [String]) -> [Int] {
 //The vowels does not include the letter "y".
 
 func reverseVowels(_ s: String) -> String {
-    if s.isEmpty {
+    var j = s.characters.count - 1
+    if j < 1 {
         return s
     }
     
-    let lowerS = s.lowercased()
-    let vowels : Set = ["a", "e", "i", "e"]
+//    let lowerS = s.lowercased() // 这里不能调用这个方法 比如aA 交换之后 Aa，
+    let vowels : Set<Character> = ["a", "e", "i", "u", "o", "A", "E", "I", "O", "U"]
     
+    var chs = Array(s.characters)
     var i = 0
-    var j = s.characters.count
-    
-    while i < j {
-        
+    //swift 的set 功能比较强大，但是这里不能用
+    while i < j { // 循环条件判断，容易出错, 注意数组越界检查
+        while ( i < j && (!vowels.contains(chs[i]))) ) {
+            i += 1
+        }
+        while ( i < j && !vowels.contains(chs[j])) {
+            j -= 1
+        }
+        swap(&chs[i], &chs[j]) // 交换的方法
+        i += 1
+        j -= 1
     }
-    
+    return String(chs)
 }
+
+let a = reverseVowels("aA")
 
 //38. Count and Say   QuestionEditorial Solution  My Submissions
 //Total Accepted: 103094
@@ -144,6 +155,6 @@ func reverseVowels(_ s: String) -> String {
 //
 //Note: The sequence of integers will be represented as a string.
 
-func countAndSay(_ n: Int) -> String {
-    
-}
+//func countAndSay(_ n: Int) -> String {
+ //
+//}
