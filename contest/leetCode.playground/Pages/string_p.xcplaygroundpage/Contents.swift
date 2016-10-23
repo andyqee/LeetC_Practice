@@ -138,8 +138,6 @@ func reverseVowels(_ s: String) -> String {
     return String(chs)
 }
 
-let a = reverseVowels("aA")
-
 //38. Count and Say   QuestionEditorial Solution  My Submissions
 //Total Accepted: 103094
 //Total Submissions: 326709
@@ -156,5 +154,88 @@ let a = reverseVowels("aA")
 //Note: The sequence of integers will be represented as a string.
 
 //func countAndSay(_ n: Int) -> String {
- //
+// 
 //}
+
+//68. Text Justification   QuestionEditorial Solution  My Submissions
+//Total Accepted: 41919
+//Total Submissions: 241136
+//Difficulty: Hard
+//Contributors: Admin
+//Given an array of words and a length L, format the text such that each line has exactly L characters and is fully (left and right) justified.
+//
+//You should pack your words in a greedy approach; that is, pack as many words as you can in each line. Pad extra spaces ' ' when necessary so that each line has exactly L characters.
+//
+//Extra spaces between words should be distributed as evenly as possible. If the number of spaces on a line do not divide evenly between words, the empty slots on the left will be assigned more spaces than the slots on the right.
+//
+//For the last line of text, it should be left justified and no extra space is inserted between words.
+//
+//For example,
+//words: ["This", "is", "an", "example", "of", "text", "justification."]
+//L: 16.
+//
+//Return the formatted lines as:
+//[
+//"This    is    an",
+//"example  of text",
+//"justification.  "
+//]
+//Note: Each word is guaranteed not to exceed L in length.
+//https://leetcode.com/problems/text-justification/
+
+//func fullJustify(_ words: [String], _ maxWidth: Int) -> [String] {
+//    
+//}
+
+//https://leetcode.com/problems/anagrams/
+
+//49. Group Anagrams   QuestionEditorial Solution  My Submissions
+//Given an array of strings, group anagrams together.
+//
+//For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"],
+//Return:
+//
+//[
+//["ate", "eat","tea"],
+//["nat","tan"],
+//["bat"]
+//]
+
+// input 是否都是lower case
+// string 的长度 是否 < 2
+
+// Someone use custom hash function with prime to calculate the key of each item in strs
+
+func groupAnagrams(_ strs: [String]) -> [[String]] {
+    if strs.count <= 1 {
+        return [strs]
+    }
+    var dic = [String : [String]]()
+    
+    strs.forEach { (item) in
+        let key = String(Array(item.characters).sorted())
+        if dic[key] != nil {
+            (dic[key]!).append(item)
+        } else {
+            var strA = [String]()
+            strA.append(item)
+            dic[key] = strA
+        }
+    }
+    return Array(dic.values)
+}
+//let st = groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
+
+
+//https://leetcode.com/problems/simplify-path/
+
+//71. Simplify Path   QuestionEditorial Solution  My Submissions
+//Total Accepted: 65729
+//Total Submissions: 280111
+//Difficulty: Medium
+//Contributors: Admin
+//Given an absolute path for a file (Unix-style), simplify it.
+//
+//For example,
+//path = "/home/", => "/home"
+//path = "/a/./b/../../c/", => "/c"
