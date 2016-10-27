@@ -263,6 +263,385 @@ func do_rob_3(_ root: TreeNode?) -> (Int, Int) {
     return (haveRoot, noRoot)
 }
 
+//100. Same Tree   QuestionEditorial Solution  My Submissions
+//Difficulty: Easy
+//Contributors: Admin
+//Given two binary trees, write a function to check if they are equal or not.
+//
+//Two binary trees are considered equal if they are structurally identical and the nodes have the same value
+
+func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+    if p == nil && q == nil {
+        return true
+    } else if p != nil && q != nil {
+        return (p!.val == q!.val) && isSameTree(p!.left, q!.left) && isSameTree(p!.right, q!.right)
+    } else {
+        return false
+    }
+}
+
+//递归写法，容易犯的低级错误时参数的名称 可能会写错
+func isSameTree_iterate(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+    var stack = [TreeNode?]()
+    stack.append(p)
+    stack.append(q)
+    
+    var res = false
+    while !stack.isEmpty {
+        let pNode = stack.removeFirst()
+        let qNode = stack.removeFirst()
+        
+        if pNode == nil && qNode == nil {
+            res = true
+        } else if pNode != nil && qNode != nil {
+            if (pNode!.val == qNode!.val) {
+                res = true
+            } else {
+                return false
+            }
+            stack.append(pNode!.left)
+            stack.append(qNode!.left)
+            stack.append(pNode!.right)
+            stack.append(qNode!.right)
+        } else {
+            return false
+        }
+    }
+    return res
+}
+
+//98. Validate Binary Search Tree   QuestionEditorial Solution  My Submissions
+
+//Difficulty: Medium
+//Contributors: Admin
+//Given a binary tree, determine if it is a valid binary search tree (BST).
+//
+//Assume a BST is defined as follows:
+//
+//The left subtree of a node contains only nodes with keys less than the node's key.
+//The right subtree of a node contains only nodes with keys greater than the node's key.
+//Both the left and right subtrees must also be binary search trees.
+
+//Example 1:
+//  2
+// / \
+//1   3
+//Binary tree [2,1,3], return true.
+//Example 2:
+//   1
+//  / \
+// 2   3
+//Binary tree [1,2,3], return false.
+
+// 这个解决犯了个错误在于，没有校验 left subtree 中的最大值，是不是比中的要小。只比较了left subtree 中的node 值，是不够的
+func isValidBST(_ root: TreeNode?) -> Bool {
+    if root == nil {
+        return true
+    }
+    var res = true
+    if root!.left != nil {
+        if (root!.left!.val < root!.val) && isValidBST(root!.left) {
+            res = true
+        } else {
+            return false
+        }
+    }
+    if root!.right != nil {
+        if (root!.right!.val > root!.val) && isValidBST(root!.right) {
+            res = true
+        } else {
+            return false
+        }
+    }
+    return res
+}
+
+func isValidBST_new(_ root: TreeNode?) -> Bool {
+    return doValidBST(root, Int.min, Int.max)
+}
+
+func doValidBST(_ root: TreeNode?, _ minV: Int, _ maxV: Int) -> Bool {
+    if root == nil {
+        return true
+    }
+    if root!.val >= maxV || root!.val <= minV {
+        return false
+    }
+    return doValidBST(root!.left, minV, root!.val) && doValidBST(root!.right, root!.val, maxV)
+}
+
+// 这个递归版的有些问题，也就是说这种recursive 转成iterate 的思路是有问题的。
+
+func worong_isValidBST_new_iterate(_ root: TreeNode?) -> Bool {
+    if root == nil {
+        return true
+    }
+    var stack = [TreeNode?]()
+    stack.append(root)
+    
+    var paramStack = [Int]()
+    paramStack.append(Int.min)
+    paramStack.append(Int.max)
+    
+    while !stack.isEmpty {
+        let node = stack.removeFirst()
+        if node == nil {
+            return false
+        }
+        let minV = paramStack.removeFirst()
+        let maxV = paramStack.removeFirst()
+        
+        if node!.val >= maxV || node!.val <= minV {
+            return false
+        }
+        stack.append(node!.left)
+        paramStack.append(minV)
+        paramStack.append(node!.val)
+        
+        stack.append(node!.right)
+        paramStack.append(node!.val)
+        paramStack.append(maxV)
+    }
+    return true
+}
+
+// 利用inorder https://discuss.leetcode.com/topic/46016/learn-one-iterative-inorder-traversal-apply-it-to-multiple-tree-questions-java-solution/2
+
+func isValidBST_inorder(_ root: TreeNode?) -> Bool {
+    if root == nil {
+        return true
+    }
+    var stack = [TreeNode?]()
+    var prevNode : TreeNode? = nil
+    var node = root
+    
+    while !stack.isEmpty || node != nil {
+        while node != nil {
+            stack.append(node)
+            node = node!.left
+        }
+        node = stack.removeFirst()
+        if prevNode != nil && node!.val <= prevNode!.val {
+            return false
+        }
+        prevNode = node
+        node = node!.right
+    }
+    return true
+}
+// 同样的test case OJ 上是没过，这里过了
+//let treeNode = TreeNode.init(1)
+//let leftNode = TreeNode.init(0)
+//let rightNode = TreeNode.init(3)
+//treeNode.left = leftNode
+//treeNode.right = rightNode
+//
+//let test = isValidBST(treeNode)
+
+//102. Binary Tree Level Order Traversal   QuestionEditorial Solution
+//Difficulty: Easy
+//Contributors: Admin
+//Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
+//
+//For example:
+//Given binary tree [3,9,20,null,null,15,7],
+//   3
+//  / \
+// 9  20
+//    /  \
+//   15   7
+//return its level order traversal as:
+//[
+// [3],
+// [9,20],
+// [15,7]
+//]
+
+func levelOrder(_ root: TreeNode?) -> [[Int]] {
+    if root == nil {
+        return [[Int]]()
+    }
+    var res = [[Int]]()
+    levelOrder(root!, 0, &res)
+    return res
+}
+// pre order kind of DFS
+func levelOrder(_ root: TreeNode, _ level: Int, _ res : inout [[Int]]) {
+    if res.count == level {
+        res.append([root.val])
+    } else {
+        res[level].append(root.val)
+    }
+    
+    if root.left != nil {
+        levelOrder(root.left!, level + 1, &res)
+    }
+    if root.right != nil {
+        levelOrder(root.right!, level + 1, &res)
+    }
+}
+
+// BFS
+func levelOrder_queue(_ root: TreeNode?) -> [[Int]] {
+    if root == nil {
+        return [[Int]]()
+    }
+    var queue = [TreeNode]()
+    queue.append(root!)
+    
+    var res = [[Int]]()
+    while !queue.isEmpty {
+        let cunt = queue.count
+        var subArray = [Int]()
+        for _ in 0..<cunt {
+            let node = queue.removeLast()
+            subArray.append(node.val)
+            if node.left != nil {
+                queue.append(node.left!)
+            }
+            if node.right != nil {
+                queue.append(node.right!)
+            }
+        }
+        res.append(subArray)
+    }
+    return res
+}
+
+
+//107. Binary Tree Level Order Traversal II   QuestionEditorial Solution  My Submissions
+//Total Accepted: 101617
+//Total Submissions: 276651
+//Difficulty: Easy
+//Contributors: Admin
+//Given a binary tree, return the bottom-up level order traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).
+//
+//For example:
+//Given binary tree [3,9,20,null,null,15,7],
+//    3
+//   / \
+//  9  20
+//  /  \
+// 15   7
+//return its bottom-up level order traversal as:
+//[
+//  [15,7],
+//  [9,20],
+//  [3]
+//]
+
+//func levelOrderBottom(_ root: TreeNode?) -> [[Int]] {
+//    
+//}
+
+
+//230. Kth Smallest Element in a BST
+
+//Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
+//
+//Note:
+//You may assume k is always valid, 1 ≤ k ≤ BST's total elements.
+//
+//Follow up:
+//What if the BST is modified (insert/delete operations) often and you need to find the kth smallest frequently? How would you optimize the kthSmallest routine?
+//
+//Hint:
+//
+//Try to utilize the property of a BST.
+//What if you could modify the BST node's structure?
+//The optimal runtime complexity is O(height of BST).
+
+//inorder search
+
+// iterate & recursive
+
+func kthSmallest_iterative(_ root: TreeNode?, _ k: Int) -> Int {
+    if root == nil {
+        return 0 // assume to return 0 Indicate not found
+    }
+    var count = k
+    
+    var stack = [TreeNode?]() //stack
+    stack.append(root!)
+    var node : TreeNode?
+    while !stack.isEmpty || node != nil {
+        node = stack.removeFirst()
+        while node!.left != nil {
+            stack.append(node!.left)
+            node = node!.left //update the node
+        }
+        //node's left child is nil.it is the samallest now
+        count -= 1
+        if count == 0 {
+            return node!.val
+        }
+        // node right
+        node = node!.right
+    }
+    return 0
+}
+
+// recuriseve 算法一定要注意返回值 return 的传递
+
+func kthSmallest_recursive(_ root: TreeNode?, _ k: Int) -> Int {
+    if root == nil {
+        return 0 // assume to return 0 Indicate not found
+    }
+    
+    var arr = [Int]()  // we can use
+    var res = 0
+    doKthSmallest(root!, k, &arr, &res)
+    return arr[k - 1]
+}
+
+func doKthSmallest(_ root: TreeNode, _ k: Int, _ array: inout [Int], _ val : inout Int){
+// 原来的实现，问题是 这里进来的node前面一个是k-1，但是不能说明这个是Kth，
+// 因为需要经过下面root.left 递归下去，找到之后最小的那个才是
+//    if array.count == k - 1 {
+//        val = root.val
+//        return
+//    }
+    if array.count >= k {
+        return
+    }
+    if root.left != nil {
+        doKthSmallest(root.left! , k, &array, &val)
+    }
+    array.append(root.val)
+    if root.right != nil {
+        doKthSmallest(root.right! , k, &array, &val)
+    }
+}
+
+let treeNode = TreeNode.init(1)
+let rightNode = TreeNode.init(3)
+treeNode.left = nil
+treeNode.right = rightNode
+
+let A = kthSmallest_recursive(treeNode, 2)
+
+// use counter to count the idx
+func doKthSmallest_count(_ root: TreeNode, _ k: Int, _ idx: inout Int, _ val : inout Int) {
+    if root.left != nil {
+        doKthSmallest_count(root.left!, k, &idx, &val)
+    }
+    idx += 1
+    if idx == k {
+        val = root.val
+        return
+    }
+    if root.right != nil {
+        doKthSmallest_count(root.right! , k, &idx, &val)
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
