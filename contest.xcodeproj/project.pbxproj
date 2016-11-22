@@ -39,6 +39,8 @@
 		A181CACC1B11C4660009E890 /* Unique Binary Search Trees.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A181CACB1B11C4660009E890 /* Unique Binary Search Trees.cpp */; };
 		A18C19F91B1F46A500730DA8 /* Permutations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18C19F81B1F46A500730DA8 /* Permutations.cpp */; };
 		A18C91E51ADD5EC6003DC3F3 /* BinarySearchTreeIterator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A18C91E41ADD5EC6003DC3F3 /* BinarySearchTreeIterator.cpp */; };
+		A19AC94A1DC3886800D4D675 /* tree.m in Sources */ = {isa = PBXBuildFile; fileRef = A19AC9491DC3886800D4D675 /* tree.m */; };
+		A19AC94D1DC388A700D4D675 /* StringLJ.m in Sources */ = {isa = PBXBuildFile; fileRef = A19AC94C1DC388A700D4D675 /* StringLJ.m */; };
 		A1B0556B1B1B3F530056DC45 /* Minimum Size Subarray Sum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1B0556A1B1B3F530056DC45 /* Minimum Size Subarray Sum.cpp */; };
 		A1EC1DC51B4AB0F200878672 /* Power of Two.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1EC1DC41B4AB0F200878672 /* Power of Two.cpp */; };
 		A1EC1DC71B4AB7DE00878672 /* Kth Smallest Element in a BST.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A1EC1DC61B4AB7DE00878672 /* Kth Smallest Element in a BST.cpp */; };
@@ -101,9 +103,13 @@
 		A181CACB1B11C4660009E890 /* Unique Binary Search Trees.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Unique Binary Search Trees.cpp"; sourceTree = "<group>"; };
 		A18C19F81B1F46A500730DA8 /* Permutations.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Permutations.cpp; sourceTree = "<group>"; };
 		A18C91E41ADD5EC6003DC3F3 /* BinarySearchTreeIterator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BinarySearchTreeIterator.cpp; sourceTree = "<group>"; };
+		A19AC9491DC3886800D4D675 /* tree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tree.m; sourceTree = "<group>"; };
+		A19AC94B1DC388A700D4D675 /* StringLJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringLJ.h; sourceTree = "<group>"; };
+		A19AC94C1DC388A700D4D675 /* StringLJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringLJ.m; sourceTree = "<group>"; };
 		A1B0556A1B1B3F530056DC45 /* Minimum Size Subarray Sum.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Minimum Size Subarray Sum.cpp"; sourceTree = "<group>"; };
 		A1EC1DC41B4AB0F200878672 /* Power of Two.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Power of Two.cpp"; sourceTree = "<group>"; };
 		A1EC1DC61B4AB7DE00878672 /* Kth Smallest Element in a BST.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Kth Smallest Element in a BST.cpp"; sourceTree = "<group>"; };
+		A1F2B7CF1DC5E9D50023278E /* tree.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tree.h; sourceTree = "<group>"; };
 		A1F545031CABFE690041EA89 /* 214_Shortest Palindrome.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "214_Shortest Palindrome.cpp"; sourceTree = "<group>"; };
 		A1FE8BDF1AD12D080060D766 /* contest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = contest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1FE8BE21AD12D080060D766 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -131,6 +137,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A19AC9481DC3886800D4D675 /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				A19AC9491DC3886800D4D675 /* tree.m */,
+				A1F2B7CF1DC5E9D50023278E /* tree.h */,
+				A19AC94B1DC388A700D4D675 /* StringLJ.h */,
+				A19AC94C1DC388A700D4D675 /* StringLJ.m */,
+			);
+			path = objc;
+			sourceTree = "<group>";
+		};
 		A1FE8BD61AD12D070060D766 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +167,7 @@
 		A1FE8BE11AD12D080060D766 /* contest */ = {
 			isa = PBXGroup;
 			children = (
+				A19AC9481DC3886800D4D675 /* objc */,
 				A1FE8BE21AD12D080060D766 /* main.cpp */,
 				A127AB791AD9360A005828A0 /* Solution.cpp */,
 				A127AB7A1AD9360A005828A0 /* Solution.h */,
@@ -262,6 +280,7 @@
 			files = (
 				A1EC1DC51B4AB0F200878672 /* Power of Two.cpp in Sources */,
 				A15D144A1B4FEE9900F3D2E9 /* ImplementStackusingQueues.cpp in Sources */,
+				A19AC94D1DC388A700D4D675 /* StringLJ.m in Sources */,
 				A14739DD1B15C99D002AAB8E /* Course Schedule.cpp in Sources */,
 				A1018C081AFCE5D0000A67EC /* Merge Two Sorted Lists.cpp in Sources */,
 				D79ADE721D97C17F00AA5B0C /* _376_Wiggle Subsequence.cpp in Sources */,
@@ -304,6 +323,7 @@
 				A15D14481B4EC2D100F3D2E9 /* Invert Binary Tree.cpp in Sources */,
 				A167BAD71B1D8D3C0019CC91 /* Implement strStr.cpp in Sources */,
 				A127AB811ADA2ACB005828A0 /* FactorialTrailingZeroes.cpp in Sources */,
+				A19AC94A1DC3886800D4D675 /* tree.m in Sources */,
 				A167BAD91B1DC07C0019CC91 /* Substring with Concatenation of All Words.cpp in Sources */,
 				A167BAD51B1D59480019CC91 /* Anagrams.cpp in Sources */,
 			);

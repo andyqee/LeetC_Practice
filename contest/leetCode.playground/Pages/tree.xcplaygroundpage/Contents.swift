@@ -562,15 +562,14 @@ func kthSmallest_iterative(_ root: TreeNode?, _ k: Int) -> Int {
     var count = k
     
     var stack = [TreeNode?]() //stack
-    stack.append(root!)
-    var node : TreeNode?
+    var node = root
     while !stack.isEmpty || node != nil {
-        node = stack.removeFirst()
-        while node!.left != nil {
-            stack.append(node!.left)
+        while node != nil {
+            stack.append(node)
             node = node!.left //update the node
         }
         //node's left child is nil.it is the samallest now
+        node = stack.removeLast()
         count -= 1
         if count == 0 {
             return node!.val
@@ -613,12 +612,15 @@ func doKthSmallest(_ root: TreeNode, _ k: Int, _ array: inout [Int], _ val : ino
     }
 }
 
-let treeNode = TreeNode.init(1)
+let treeNode = TreeNode.init(2)
 let rightNode = TreeNode.init(3)
-treeNode.left = nil
+let leftNode = TreeNode.init(1)
+
+treeNode.left = leftNode
 treeNode.right = rightNode
 
-let A = kthSmallest_recursive(treeNode, 2)
+//let A = kthSmallest_recursive(treeNode, 2)
+//let B = kthSmallest_iterative(treeNode, 2)
 
 // use counter to count the idx
 func doKthSmallest_count(_ root: TreeNode, _ k: Int, _ idx: inout Int, _ val : inout Int) {
@@ -635,19 +637,136 @@ func doKthSmallest_count(_ root: TreeNode, _ k: Int, _ idx: inout Int, _ val : i
     }
 }
 
+func pathSum(_ root: TreeNode?, _ sum: Int) -> Int {
+    if root == nil {
+        return 0
+    }
+    if root!.left == nil && root!.right == nil {
+        return ((root!.val == sum ) ? 1 : 0)
+    }
+    
+    var count = 0
+    if (root!.left != nil) {
+        count += pathSum(root!.left, sum - root!.val) + ((root!.val == sum ) ? 1 : 0) + pathSum(root!.left, sum)
+    }
+    if (root!.right != nil) {
+        count += pathSum(root!.right, sum - root!.val) + ((root!.val == sum ) ? 1 : 0) + pathSum(root!.right, sum)
+    }
+    return count
+}
 
 
+//103. Binary Tree Zigzag Level Order Traversal   QuestionEditorial Solution  My Submissions
+//Total Accepted: 77494
+//Total Submissions: 247492
+//Difficulty: Medium
+//Contributors: Admin
+//Given a binary tree, return the zigzag level order traversal of its nodes' values. (ie, from left to right, then right to left for the next level and alternate between).
+//
+//For example:
+//Given binary tree [3,9,20,null,null,15,7],
+//3
+/// \
+//9  20
+///  \
+//15   7
+//return its zigzag level order traversal as:
+//[
+//[3],
+//[20,9],
+//[15,7]
+//]
 
+func zigzagLevelOrder(_ root: TreeNode?) -> [[Int]] {
+    if root == nil {
+        return [[Int]]()
+    }
+    
+    var queue = [TreeNode]()
+    var res = [[Int]]()
+    queue.append(root!)
+    
+    var reverse = false
+    
+    while !queue.isEmpty {
+        let count = queue.count
+        var subArray = [Int]()
+        for _ in 0..<count {
+           let node = queue.removeFirst()
+           subArray.append(node.val)
+           
+            if node.left != nil {
+                queue.append(node.left!)
+            }
+            if node.right != nil {
+                queue.append(node.right!)
+            }
+        }
+        if reverse {
+            res.append(subArray.reversed())
+        } else {
+            res.append(subArray)
+        }
+        reverse = !reverse
+    }
+    return res
+}
 
+//114. Flatten Binary Tree to Linked List   QuestionEditorial Solution  My Submissions
+//Total Accepted: 102256
+//Total Submissions: 309986
+//Difficulty: Medium
+//Contributors: Admin
+//Given a binary tree, flatten it to a linked list in-place.
+//
+//For example,
+//Given
+//
+//1
+/// \
+//2   5
+/// \   \
+//3   4   6
+//The flattened tree should look like:
+//1
+//\
+//2
+//\
+//3
+//\
+//4
+//\
+//5
+//\
+//6
 
+func flatten(_ root: TreeNode?) {
+    if let VRoot = root {
+        doFlatten(VRoot)
+    }
+}
 
+func doFlatten(_ root: TreeNode) -> TreeNode {
+    if root.left == nil && root.right == nil {
+        return root
+    }
+    
+    if root.left != nil && root.right != nil {
+        var left = doFlatten(root.left!)
+        var right = doFlatten(root.right!)
+        left.right = root.left!
+        root.left = nil
+    }
+    if root.left != nil {
+        root.right = root.left
+        root.left = nil
+    }
+    return  doFlatten(root.right!)
+}
 
-
-
-
-
-
-
+//func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
+    
+//}
 
 
 

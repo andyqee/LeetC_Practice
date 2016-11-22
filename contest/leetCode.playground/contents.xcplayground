@@ -6,5 +6,6 @@
         <page name='string_p'/>
         <page name='bfs'/>
         <page name='tree'/>
+        <page name='Array'/>
     </pages>
 </playground>
