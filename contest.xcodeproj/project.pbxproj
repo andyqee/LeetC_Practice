@@ -54,6 +54,7 @@
 		D79DE7141C8F038500A993E0 /* 236.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D79DE7131C8F038500A993E0 /* 236.cpp */; };
 		D79DE7321C984ACB00A993E0 /* Different Ways to Add Parentheses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D79DE7311C984ACB00A993E0 /* Different Ways to Add Parentheses.cpp */; };
 		D7B10EF91D961FDA003E16AC /* 377_Combination Sum IV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7B10EF81D961FDA003E16AC /* 377_Combination Sum IV.cpp */; };
+		D7D1DE511DC9831D00034256 /* OCSolution.m in Sources */ = {isa = PBXBuildFile; fileRef = D7D1DE501DC9831D00034256 /* OCSolution.m */; };
 		D7DEB4BA1C7DDC8000E8005D /* Increasing Triplet Subsequence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D7DEB4B91C7DDC8000E8005D /* Increasing Triplet Subsequence.cpp */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +124,8 @@
 		D79DE7131C8F038500A993E0 /* 236.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 236.cpp; sourceTree = "<group>"; };
 		D79DE7311C984ACB00A993E0 /* Different Ways to Add Parentheses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Different Ways to Add Parentheses.cpp"; sourceTree = "<group>"; };
 		D7B10EF81D961FDA003E16AC /* 377_Combination Sum IV.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "377_Combination Sum IV.cpp"; sourceTree = "<group>"; };
+		D7D1DE4F1DC9831D00034256 /* OCSolution.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCSolution.h; sourceTree = "<group>"; };
+		D7D1DE501DC9831D00034256 /* OCSolution.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCSolution.m; sourceTree = "<group>"; };
 		D7DEB4B91C7DDC8000E8005D /* Increasing Triplet Subsequence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = "Increasing Triplet Subsequence.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,7 +173,6 @@
 				A19AC9481DC3886800D4D675 /* objc */,
 				A1FE8BE21AD12D080060D766 /* main.cpp */,
 				A127AB791AD9360A005828A0 /* Solution.cpp */,
-				A127AB7A1AD9360A005828A0 /* Solution.h */,
 				A127AB7C1AD94B85005828A0 /* BTRSVSolution.cpp */,
 				A127AB7E1AD972E4005828A0 /* ExcelSheetColumnNumber.cpp */,
 				A127AB801ADA2ACA005828A0 /* FactorialTrailingZeroes.cpp */,
@@ -216,9 +218,20 @@
 				D79ADE711D97C17F00AA5B0C /* _376_Wiggle Subsequence.cpp */,
 				D79A9B6B1DA8A475009F05C1 /* Largest_Divisible_Subset.swift */,
 				D79A9B6A1DA8A475009F05C1 /* contest-Bridging-Header.h */,
+				A127AB7A1AD9360A005828A0 /* Solution.h */,
 				D79A9B6D1DA8C658009F05C1 /* leetCode.playground */,
+				D7D1DE4E1DC982D300034256 /* OJC */,
 			);
 			path = contest;
+			sourceTree = "<group>";
+		};
+		D7D1DE4E1DC982D300034256 /* OJC */ = {
+			isa = PBXGroup;
+			children = (
+				D7D1DE4F1DC9831D00034256 /* OCSolution.h */,
+				D7D1DE501DC9831D00034256 /* OCSolution.m */,
+			);
+			name = OJC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +330,7 @@
 				A1FE8BE31AD12D080060D766 /* main.cpp in Sources */,
 				A18C91E51ADD5EC6003DC3F3 /* BinarySearchTreeIterator.cpp in Sources */,
 				D70C29341D94D10D00556ED6 /* 392_Is_Subsequence.cpp in Sources */,
+				D7D1DE511DC9831D00034256 /* OCSolution.m in Sources */,
 				A1018C0A1AFCF116000A67EC /* Generate Parentheses.cpp in Sources */,
 				A167BAD31B1D47C10019CC91 /* String to Integer.cpp in Sources */,
 				A1EC1DC71B4AB7DE00878672 /* Kth Smallest Element in a BST.cpp in Sources */,
